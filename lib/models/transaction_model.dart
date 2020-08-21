@@ -2,65 +2,71 @@ import 'package:flutter/material.dart';
 import 'package:tammu_finance/constants/color_constant.dart';
 
 class TransactionModel {
+  String invoiceNumber;
+  String imgIcon;
   String name;
-  String type;
   Color colorType;
   String signType;
   String amount;
-  String information;
-  String recipient;
+  String qty;
   String date;
-  String card;
 
-  TransactionModel(this.name, this.type, this.colorType, this.signType,
-      this.amount, this.information, this.recipient, this.date, this.card);
+  TransactionModel(this.invoiceNumber, this.imgIcon, this.name, this.colorType,
+      this.signType,this.amount, this.qty, this.date);
 }
 
 List<TransactionModel> transactions = transactionData
     .map((item) => TransactionModel(
+    item['invoiceNumber'],
+    item['imgIcon'],
     item['name'],
-    item['type'],
     item['colorType'],
     item['signType'],
     item['amount'],
-    item['information'],
-    item['recipient'],
-    item['date'],
-    item['card']))
+    item['qty'],
+    item['date']))
     .toList();
 
 var transactionData = [
   {
-    "name": "Outcome",
-    "type": 'assets/icons/outcome_icon.svg',
-    "colorType": kOrangeColor,
-    "signType": "-",
-    "amount": "200.000",
-    "information": "Transfer to",
-    "recipient": "Michael Ballack",
-    "date": "12 Feb 2020",
-    "card": "assets/images/mastercard_logo.png"
-  },
-  {
-    "name": "Income",
-    "type": 'assets/icons/income_icon.svg',
+    "invoiceNumber" : "INV/C/08/20/0010",
+    "imgIcon": "assets/images/coffee.png",
+    "name": "Coffee Beans",
     "colorType": kGreenColor,
-    "signType": "+",
-    "amount": "352.000",
-    "information": "Received from",
-    "recipient": "Patrick Star",
-    "date": "10 Feb 2020",
-    "card": "assets/images/jenius_logo_blue.png"
+    "signType": "Rp ",
+    "amount": "110.000",
+    "qty": "2",
+    "date": "20 Aug 2020",
   },
   {
-    "name": "Outcome",
-    "type": 'assets/icons/outcome_icon.svg',
-    "colorType": kOrangeColor,
-    "signType": "-",
-    "amount": "53.265",
-    "information": "Monthly Payment",
-    "recipient": "Spotify",
-    "date": "09 Feb 2020",
-    "card": "assets/images/mastercard_logo.png"
+    "invoiceNumber" : "INV/R/08/20/0006",
+    "imgIcon": "assets/images/roaster.png",
+    "name": "Coffee Roasting",
+    "colorType": kGreenColor,
+    "signType": "Rp ",
+    "amount": "500.000",
+    "qty": "20",
+    "date": "19 Aug 2020",
+  },
+  {
+    "invoiceNumber" : "INV/R/08/20/0005",
+    "imgIcon": "assets/images/roaster.png",
+    "name": "Coffee Roasting",
+    "colorType": kGreenColor,
+    "signType": "Rp ",
+    "amount": "25.000",
+    "qty": "1",
+    "date": "18 Aug 2020",
+  },
+  {
+    "invoiceNumber" : "INV/R/08/20/0004",
+    "imgIcon": "assets/images/roaster.png",
+    "name": "Coffee Roasting",
+    "colorType": kGreenColor,
+    "signType": "Rp ",
+    "amount": "250.000",
+    "qty": "10",
+    "date": "15 Aug 2020",
   }
+
 ];

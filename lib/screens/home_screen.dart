@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:slide_to_confirm/slide_to_confirm.dart';
 import 'package:tammu_finance/constants/color_constant.dart';
+import 'package:tammu_finance/constants/style_constant.dart';
 import 'package:tammu_finance/custom_icons/flutter_custom_icon.dart';
 import 'package:tammu_finance/models/card_model.dart';
 import 'package:tammu_finance/models/transaction_model.dart';
@@ -14,22 +15,32 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).backgroundColor,
+        title: Text(
+          "Tammu Roastery",
+          style: GoogleFonts.nunito(
+            fontSize: 20,
+            fontWeight: FontWeight.w300,
+            color: kWhiteColor,
+          ),
+        ),
+        backgroundColor: Theme.of(context).accentColor,
         elevation: 0,
         leading: IconButton(
           icon: Icon(
             MyFlutterApp.navigation_drawer,
-            color: kBlackColor,
+            color: kWhiteColor,
           ),
           onPressed: () {},
           padding: EdgeInsets.only(left: 8),
         ),
+
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
@@ -159,135 +170,106 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
             ),
 
-            // Last Transaction Section
-            Padding(
-                padding:
-                EdgeInsets.only(left: 24, top: 32, bottom: 16, right: 24),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Shop',
-                      style: GoogleFonts.nunito(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: kBlackColor,
-                      ),
-                    ),
 
-                  ],
-                )),
+            // Service Section
+            Padding(
+              padding: EdgeInsets.only(left: 16, top: 24, bottom: 12),
+              child: Text(
+                'Let\'s Shopping!',
+                style: mTitleStyle,
+              ),
+            ),
             Container(
-              height: 190,
-              child: ListView.builder(
-                padding: EdgeInsets.only(left: 16, right: 8),
-                scrollDirection: Axis.horizontal,
-                itemCount: transactions.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.only(right: 8),
-                    height: 190,
-                    width: 160,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: kWhiteColor,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color(0x04000000),
-                            blurRadius: 10,
-                            spreadRadius: 10,
-                            offset: Offset(0.0, 8.0))
-                      ],
-                    ),
-                    child: Stack(
-                      children: <Widget>[
-                        Positioned(
-                          top: 16,
-                          left: 16,
-                          child: SvgPicture.asset(transactions[index].type),
-                          height: 24,
-                          width: 24,
-                        ),
-                        Positioned(
-                          right: 8,
-                          top: 8,
-                          child:
-                          SvgPicture.asset('assets/svg/mastercard_bg.svg'),
-                        ),
-                        Positioned(
-                          top: 16,
-                          right: 16,
-                          child: Text(
-                            transactions[index].name,
-                            style: GoogleFonts.nunito(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: transactions[index].colorType),
+              height: 81,
+              margin: EdgeInsets.only(left: 16, right: 16),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(right: 8),
+                          padding: EdgeInsets.only(left: 16),
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: kWhiteColor,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: mBorderColor, width: 1),
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              SvgPicture.asset(
+                                'assets/svg/coffee-bag.svg',
+                                height: 33,
+                                width: 33,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      'Coffee Beans',
+                                      style: mServiceTitleStyle,
+                                    ),
+                                    Text(
+                                      'Buy Coffee Beans',
+                                      style: mServiceSubtitleStyle,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                        Positioned(
-                          top: 64,
-                          left: 16,
-                          child: Text(
-                            transactions[index].signType +
-                                'Rp ' +
-                                transactions[index].amount,
-                            style: GoogleFonts.nunito(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: transactions[index].colorType),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(left: 8),
+                          padding: EdgeInsets.only(left: 16),
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: kWhiteColor,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: mBorderColor, width: 1),
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              SvgPicture.asset(
+                                'assets/svg/roaster.svg',
+                                height: 33,
+                                width: 33,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      'Coffee Roasting',
+                                      style: mServiceTitleStyle,
+                                    ),
+                                    Text(
+                                      'Time to Roast',
+                                      style: mServiceSubtitleStyle,
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                        Positioned(
-                          left: 16,
-                          top: 106,
-                          child: Text(
-                            transactions[index].information,
-                            style: GoogleFonts.nunito(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: kGreyColor),
-                          ),
-                        ),
-                        Positioned(
-                          left: 16,
-                          bottom: 48,
-                          child: Text(
-                            transactions[index].recipient,
-                            style: GoogleFonts.nunito(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: kBlackColor),
-                          ),
-                        ),
-                        Positioned(
-                          left: 16,
-                          bottom: 22,
-                          child: Text(
-                            transactions[index].date,
-                            style: GoogleFonts.nunito(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: kGreyColor),
-                          ),
-                        ),
-                        Positioned(
-                          right: 14,
-                          bottom: 16,
-                          child: Image.asset(
-                            transactions[index].card,
-                            height: 22,
-                            width: 33,
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                },
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
 
-            // Top Up Section
+
+            // Las Transaction
             Padding(
                 padding:
                 EdgeInsets.only(left: 24, top: 32, bottom: 16, right: 24),
@@ -312,11 +294,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 )),
+
             Container(
               height: 304,
               child: ListView.builder(
                 padding: EdgeInsets.only(left: 16, right: 16),
-                itemCount: wallets.length,
+                itemCount: transactions.length,
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(bottom: 8),
@@ -340,13 +323,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 12,
                             ),
                             Container(
-                              width: 44,
-                              height: 44,
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: kWhiteGreyColor,
                                 image: DecorationImage(
-                                  image: AssetImage(wallets[index].walletLogo),
+                                  image: AssetImage(transactions[index].imgIcon),
                                 ),
                               ),
                             ),
@@ -358,14 +341,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  wallets[index].name,
+                                  transactions[index].invoiceNumber,
                                   style: GoogleFonts.nunito(
-                                      fontSize: 14,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w300,
+                                      color: kBlackColor),
+                                ),
+                                Text(
+                                  transactions[index].name,
+                                  style: GoogleFonts.nunito(
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w700,
                                       color: kBlackColor),
                                 ),
                                 Text(
-                                  wallets[index].wallet,
+                                  "x" + transactions[index].qty,
                                   style: GoogleFonts.nunito(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w700,
@@ -375,14 +365,31 @@ class _HomeScreenState extends State<HomeScreen> {
                             )
                           ],
                         ),
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text(
-                              wallets[index].walletNumber,
-                              style: GoogleFonts.nunito(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w700,
-                                  color: kGreyColor),
+                            Padding(
+                              padding: EdgeInsets.only(right: 8, bottom: 3),
+                              child:
+                              Text(
+                                transactions[index].date,
+                                style: GoogleFonts.nunito(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w300,
+                                color: kBlackColor),
+                                ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(right: 8),
+                              child:
+                              Text(
+                                "Rp "+transactions[index].amount,
+                                style: GoogleFonts.nunito(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: kBlackColor),
+                              ),
                             ),
                             SizedBox(
                               width: 16,

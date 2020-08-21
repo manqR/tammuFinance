@@ -13,3 +13,10 @@ const kJeniusCardColor = Color(0xFF03A5e1);
 const kMasterCardColor = Color(0xFFF5F5F5);
 const kUnpaidColor = Color(0xFFC0392B);
 const kGradientSlideButton = [const Color(0xFF3B64F4), const Color(0xFF6822FD)];
+
+
+const mGreyColor = Color(0xFFB4B0B0);
+const mSubtitleColor = Color(0xFF8E8E8E);
+const mBorderColor = Color(0xFFE8E8F3);
+const mCardTitleColor = Color(0xFF2E4ECF);
+const mCardSubtitleColor = kBlackColor;

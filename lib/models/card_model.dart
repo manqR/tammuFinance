@@ -33,7 +33,7 @@ List<CardModel> cards = cardData
 var cardData = [
   {
     "name": "Your Balanced",
-    "type": "assets/images/balance.png",
+    "type": "assets/images/balanced.png",
     "balance": "20.528.337",
     "valid": "02/23",
     "moreIcon": 'assets/icons/more_icon_white.svg',
@@ -44,7 +44,7 @@ var cardData = [
   },
   {
     "name": "Unpaid",
-    "type": "assets/images/mastercard_logo.png",
+    "type": "assets/images/alarm.png",
     "balance": "6.352.251",
     "valid": "06/24",
     "moreIcon": 'assets/icons/more_icon_white.svg',
