@@ -6,6 +6,16 @@ import 'package:google_fonts/google_fonts.dart';
 var mTitleStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w600, color: kBlackColor, fontSize: 16);
 
+
+// Style for Splash
+var mSplashTitle = GoogleFonts.inter(
+    fontWeight: FontWeight.w600, color: kWhiteColor, fontSize: 16);
+
+
+// Style for Splash
+var mLoginTitle = GoogleFonts.inter(
+    fontWeight: FontWeight.w600, color: kBlackColor, fontSize: 24);
+
 // Style for Discount Section
 var mMoreDiscountStyle = GoogleFonts.inter(
     fontSize: 12, fontWeight: FontWeight.w700, color: kBlueColor);
@@ -38,3 +48,5 @@ var mTravlogContentStyle = GoogleFonts.inter(
     fontSize: 10, fontWeight: FontWeight.w500, color: kBlackColor);
 var mTravlogPlaceStyle = GoogleFonts.inter(
     fontSize: 10, fontWeight: FontWeight.w500, color: kBlueColor);
+
+

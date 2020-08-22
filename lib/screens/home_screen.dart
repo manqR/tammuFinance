@@ -11,12 +11,14 @@ import 'package:tammu_finance/models/wallet_model.dart';
 
 
 class HomeScreen extends StatefulWidget {
+  static String routeName = "/home_screen";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             gradient: LinearGradient(
-              colors: kGradientSlideButton,
+              colors: kGradientColorLogin,
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               tileMode: TileMode.mirror,
-              stops: const <double>[0.0, 1.0],
+//              stops: const <double>[0.0, 1.0],
             ),
           ),
           child: ConfirmationSlider(
