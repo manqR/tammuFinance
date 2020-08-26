@@ -8,6 +8,7 @@ import 'package:tammu_finance/custom_icons/flutter_custom_icon.dart';
 import 'package:tammu_finance/models/card_model.dart';
 import 'package:tammu_finance/models/transaction_model.dart';
 import 'package:tammu_finance/models/wallet_model.dart';
+import 'package:tammu_finance/screens/coffee_menu/coffee_menu_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -26,11 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           "Tammu Roastery",
-          style: GoogleFonts.nunito(
-            fontSize: 20,
-            fontWeight: FontWeight.w300,
-            color: kWhiteColor,
-          ),
+          style: mAppbarStyle
         ),
         backgroundColor: Theme.of(context).accentColor,
         elevation: 0,
@@ -211,10 +208,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Text(
-                                      'Coffee Beans',
-                                      style: mServiceTitleStyle,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, CoffeeMenu.routeName);
+                                      },
+                                      child: Text(
+                                        'Coffee Beans',
+                                        style: mServiceTitleStyle,
+                                      ),
                                     ),
+
                                     Text(
                                       'Buy Coffee Beans',
                                       style: mServiceSubtitleStyle,

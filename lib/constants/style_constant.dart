@@ -20,6 +20,14 @@ var mLoginTitle = GoogleFonts.inter(
 var mMoreDiscountStyle = GoogleFonts.inter(
     fontSize: 12, fontWeight: FontWeight.w700, color: kBlueColor);
 
+
+// Style for Appbar Section
+var mAppbarStyle = GoogleFonts.nunito(
+  fontSize: 20,
+  fontWeight: FontWeight.w300,
+  color: kWhiteColor,
+);
+
 // Style for Service Section
 var mServiceTitleStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 12, color: kBlackColor);
