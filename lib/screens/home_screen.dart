@@ -9,6 +9,7 @@ import 'package:tammu_finance/models/card_model.dart';
 import 'package:tammu_finance/models/transaction_model.dart';
 import 'package:tammu_finance/models/wallet_model.dart';
 import 'package:tammu_finance/screens/coffee_menu/coffee_menu_screen.dart';
+import 'package:tammu_finance/screens/roasting_menu/WikipediaExplorer.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -252,9 +253,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Text(
-                                      'Coffee Roasting',
-                                      style: mServiceTitleStyle,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, WikipediaExplorer.routeName);
+                                      },
+                                      child: Text(
+                                        'Coffee Roasting',
+                                        style: mServiceTitleStyle,
+                                      ),
                                     ),
                                     Text(
                                       'Time to Roast',
